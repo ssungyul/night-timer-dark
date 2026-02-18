@@ -2,9 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<title>Ssungyul Timer</title>
+<title>ssungyul timer</title>
 
-<!-- 💛 Cute Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
@@ -14,58 +13,55 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(to top, #0f1021, #1b1f3a, #2a2f5a);
+  background-image: url("window.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   font-family: 'Baloo 2', cursive;
 }
 
-/* 🌿 Card */
+/* 🌙 반 크기 카드 */
 .container {
-  width: 260px;
-  padding: 22px;
-  border-radius: 26px;
-  background: rgba(255,255,255,0.2);
-  backdrop-filter: blur(12px);
+  width: 180px;
+  padding: 16px;
+  border-radius: 20px;
+  background: rgba(20, 25, 60, 0.65);
+  backdrop-filter: blur(8px);
   text-align: center;
   color: white;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
 }
 
-/* 🍊 Title */
+/* 타이틀 */
 .title {
-  font-size: 16px;
+  font-size: 13px;
   font-weight: 600;
-  margin-bottom: 4px;
-}
-
-.subtitle {
-  font-size: 12px;
-  opacity: 0.8;
-  margin-bottom: 16px;
+  margin-bottom: 10px;
 }
 
 /* ⏰ Time */
 .time {
-  font-size: 54px;
+  font-size: 36px;
   font-weight: 700;
-  margin: 20px 0;
+  margin: 16px 0;
 }
 
-/* 🌼 Mode buttons */
+/* 🔹 Mode buttons (간격 축소) */
 .modes {
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 14px;
+  justify-content: center;
+  gap: 6px;   /* 👈 간격 줄임 */
+  margin-bottom: 10px;
 }
 
 .mode-btn {
   border: none;
-  background: rgba(255,255,255,0.3);
+  background: rgba(255,255,255,0.25);
   color: white;
-  padding: 6px 10px;
-  border-radius: 16px;
-  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 14px;
+  font-size: 10px;
   cursor: pointer;
-  transition: 0.2s;
 }
 
 .mode-btn.active {
@@ -73,43 +69,32 @@ body {
   font-weight: 600;
 }
 
-.mode-btn:hover {
-  transform: scale(1.05);
-}
-
-/* 🍊 Controls */
+/* 🎛 Controls */
 .controls {
   display: flex;
   justify-content: center;
-  gap: 8px;
+  gap: 6px;
 }
 
 .control-btn {
   background: #ff9f5f;
   border: none;
   color: white;
-  padding: 7px 16px;
-  border-radius: 18px;
-  font-size: 13px;
+  padding: 5px 12px;
+  border-radius: 14px;
+  font-size: 11px;
   cursor: pointer;
 }
 
 .icon-btn {
-  background: rgba(255,255,255,0.3);
+  background: rgba(255,255,255,0.25);
   border: none;
   color: white;
-  width: 36px;
-  height: 36px;
+  width: 26px;
+  height: 26px;
   border-radius: 50%;
-  font-size: 15px;
+  font-size: 12px;
   cursor: pointer;
-}
-
-/* 🌿 Cute message */
-.message {
-  margin-top: 12px;
-  font-size: 11px;
-  opacity: 0.8;
 }
 </style>
 </head>
@@ -118,8 +103,7 @@ body {
 
 <div class="container">
 
-  <div class="title">🍊 Ssungyul Focus Timer</div>
-  <div class="subtitle">Grow a little every 25 minutes</div>
+  <div class="title">🍊 Ssungyul Timer</div>
 
   <div class="modes">
     <button class="mode-btn active" onclick="setMode('pomodoro', this)">Focus</button>
@@ -134,8 +118,6 @@ body {
     <button class="icon-btn" onclick="pauseTimer()">⏸</button>
     <button class="icon-btn" onclick="resetTimer()">⟳</button>
   </div>
-
-  <div class="message">✨ Small steps make big dreams</div>
 
 </div>
 
@@ -177,7 +159,7 @@ function startTimer() {
     if (totalSeconds <= 0) {
       clearInterval(timer);
       timer = null;
-      alert("🍊 Great job! Take a little break ✨");
+      alert("Time's up!");
       return;
     }
     totalSeconds--;
@@ -202,3 +184,4 @@ updateDisplay();
 
 </body>
 </html>
+
